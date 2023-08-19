@@ -1,24 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {Route, Routes} from "react-router-dom";
+import Footer from './components/footer/footer';
+import Navbar from './components/navbar/navbar';
+import "./App.sass"
+import CatalogContextProvider from './ContextProviders/catalogContentProvider'
+import Catalog from './components/catalog/catalog';
+import CartContextProvider from './ContextProviders/cartItemsProvider'
 
 function App() {
+
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div id="App">
+      <Navbar/>
+      <CatalogContextProvider>
+        <CartContextProvider>
+          <Routes>
+            <Route path="/" element={<></>}/>
+            <Route path="/catalog" element= {<Catalog/>}/>
+          </Routes>
+        </CartContextProvider>
+      </CatalogContextProvider>
+      <Footer/>
     </div>
   );
 }
