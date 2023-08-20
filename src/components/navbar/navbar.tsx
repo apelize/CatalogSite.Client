@@ -20,8 +20,9 @@ const Navbar = () => {
         <li><NavLink to={"/shipping"}>Доставка</NavLink></li>
         <li><NavLink to={"/contacts"}>Контакты</NavLink></li>
         <li><NavLink to={"/feedback"}>Отзывы</NavLink></li>
+        <li onClick={() => {setActive(true); setIsOpen(!isOpen); }}><p>Корзина</p></li>
       </ul>
-      <div id="cart" onClick={() => {setActive(!active)}}>
+      <div id="cart" onClick={() => { setActive(!active);}}>
         <img src={shopping_cart} alt='cart'></img>
         <div>Корзина</div>
       </div>

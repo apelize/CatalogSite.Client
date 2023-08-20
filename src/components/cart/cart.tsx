@@ -43,8 +43,8 @@ const Cart = () => {
               <p>Данные</p>
               <hr/>
               <p>Ваш Номер</p>
-                <input className='phone-checkout' type="text" value={phoneNumber} onChange={(e) => {setPhoneNumber(e.target.value)}}/>
-                <div></div>
+                <input placeholder='Номер телефона' className='phone-checkout' type="text" value={phoneNumber} onChange={(e) => {setPhoneNumber(e.target.value)}}/>
+                <div className='empty'></div>
                 <button className='checkout-button' onClick={() => {SendNotification()}}>Оформить заказ</button>
             </div>
         </div>

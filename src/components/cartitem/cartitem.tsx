@@ -1,4 +1,4 @@
-import React, { FC, useContext, useReducer, useState } from 'react'
+import { FC, useContext, useReducer } from 'react'
 import { CartContext } from '../../ContextProviders/cartContextProvider'
 import { CartProduct } from '../../Entities/cartProduct'
 import './cartitem.sass'
