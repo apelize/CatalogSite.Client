@@ -1,5 +1,17 @@
 #catalog
+    min-height: 75vh
     justify-content: center
-    display: inline-flex
+    display: flex
     background-color: white
-    height: 40rem
+
+@media only screen and (min-device-width: 0px) and (max-device-width: 500px)
+    #catalog
+        // flex-wrap: wrap
+        max-width: 80%
+        flex-direction: column
+
+@media only screen and (min-device-width: 501px) and (max-device-width: 1000px)
+    #catalog
+        flex-wrap: wrap
+        max-width: 80%
+        flex-direction: row

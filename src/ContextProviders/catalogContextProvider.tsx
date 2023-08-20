@@ -1,7 +1,7 @@
 import React, { FC, ReactNode } from 'react';
 import { createContext, useState,} from 'react'
 import { Product } from '../Entities/product'
-import { fetchProducts } from '.././scripts/FetchingProductsScript';
+import { fetchProducts } from '../scripts/FetchingProductsScript';
 
 
 interface CatalogContextProps {
@@ -17,7 +17,7 @@ type Props ={
 
 const CatalogContentProvider: FC<Props> = ({children}) => {
   const [products,setFetchedProducts] = useState<Product[]>([]);
-  fetchProducts().then(prods => setFetchedProducts(prods))
+  if (products.length === 0) fetchProducts().then(prods => setFetchedProducts(prods))
   return (
     <CatalogContext.Provider value={{products: products!, setProducts: setFetchedProducts}}>
         {children}

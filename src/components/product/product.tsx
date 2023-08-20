@@ -1,6 +1,6 @@
-import React, { FC, useContext } from 'react'
-import { CartContext } from '../../ContextProviders/cartItemsProvider';
-import { CatalogContext } from '../../ContextProviders/catalogContentProvider';
+import { FC, useContext } from 'react'
+import { CartContext } from '../../ContextProviders/cartContextProvider';
+import { CatalogContext } from '../../ContextProviders/catalogContextProvider';
 import './product.sass'
 
 interface ProductProps{
@@ -20,7 +20,10 @@ const ProductItem : FC<ProductProps> = ({id, productName, productDescription, pr
   return (
     <div id="product">
         <img src={productImage} alt={productImage}/>
-        <button onClick={() => {products.forEach(prod => {if (prod.productId === id) {AddProductToCart(prod);}})}}>{productName}   {productPrice}р</button>
+        <div onClick={() => {products.forEach(prod => {if (prod.productId === id) {AddProductToCart(prod);}})}}>
+            <p>{productName}</p>
+            <p>{productPrice}р</p>
+        </div>
     </div>
   )
 }

@@ -1,7 +1,8 @@
 .active
     color: #686666
 
-nav
+#nav
+    height: 8vh
     display: flex
     justify-content: space-between
     align-items: center
@@ -49,3 +50,32 @@ nav ul li a
     margin: 0 1rem
     &:hover
         text-decoration: underline
+
+@media only screen and (min-device-width: 0px) and (max-device-width: 500px)
+    #cart
+        display: none
+    #menu
+        display: flex
+        position: absolute
+        top: 0.75rem
+        right: 1rem
+        span
+            height: 2rem
+            width: 2rem
+            background-color: #332d2d
+            border: 0.3rem solid white
+            border-radius: 2rem
+    #nav
+        max-width: 100px
+        flex-direction: column
+        align-items: start
+        ul
+            flex-direction: column
+            width: 100%
+            margin-bottom: 0.25rem
+            li
+                background-color: #332d2d
+                width: 100%
+                text-align: center
+        
+    

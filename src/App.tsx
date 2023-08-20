@@ -2,24 +2,32 @@ import {Route, Routes} from "react-router-dom";
 import Footer from './components/footer/footer';
 import Navbar from './components/navbar/navbar';
 import "./App.sass"
-import CatalogContextProvider from './ContextProviders/catalogContentProvider'
+import CatalogContextProvider from './ContextProviders/catalogContextProvider'
 import Catalog from './components/catalog/catalog';
-import CartContextProvider from './ContextProviders/cartItemsProvider'
+import CartContextProvider from './ContextProviders/cartContextProvider'
+import Home from "./components/home/home";
+import Shipping from "./components/shipping/shipping";
+import Contacts from "./components/contacts/contacts";
+import Feedback from "./components/feedback/feedback";
+import Cart from "./components/cart/cart";
 
 function App() {
 
-  
   return (
     <div id="App">
-      <Navbar/>
-      <CatalogContextProvider>
-        <CartContextProvider>
+      <CartContextProvider>
+      <Cart/>
+        <Navbar/>
+        <CatalogContextProvider>
           <Routes>
-            <Route path="/" element={<></>}/>
+            <Route path="/" element={<Home/>}/>
             <Route path="/catalog" element= {<Catalog/>}/>
-          </Routes>
-        </CartContextProvider>
-      </CatalogContextProvider>
+            <Route path="/shipping" element= {<Shipping/>}/>
+            <Route path="/contacts" element= {<Contacts/>}/>
+            <Route path="/feedback" element= {<Feedback/>}/>
+          </Routes>      
+        </CatalogContextProvider>
+      </CartContextProvider>
       <Footer/>
     </div>
   );
