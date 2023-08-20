@@ -2,17 +2,19 @@ import { NavLink } from 'react-router-dom'
 import './navbar.sass'
 import shopping_cart from '../../assets/shopping_cart.png'
 import { CartContext } from '../../ContextProviders/cartContextProvider'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 
 const Navbar = () => {
   let {active, setActive} = useContext(CartContext)
+  const [isOpen, setIsOpen] = useState<Boolean>(false)
 
   return (
     <nav id="nav">
       <div id="menu">
-        <span></span>
+        <p>Fakel.by</p>
+        <span onClick={() => {setIsOpen(!isOpen)}}></span>
       </div>
-      <ul>
+      <ul className={isOpen ? "menu-open" : "menu-closed"}>
         <li><NavLink to={"/"}>Главная</NavLink></li>
         <li><NavLink to={"/catalog"}>Каталог</NavLink></li>
         <li><NavLink to={"/shipping"}>Доставка</NavLink></li>

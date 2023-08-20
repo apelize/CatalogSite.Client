@@ -1,12 +1,16 @@
 #product
+    min-height: 55vh
     display: grid
-    padding: 3rem
+    justify-content: center
+    justify-items: center
+    margin: 3rem
     img
         height: 25rem
         border-radius: 2rem
         
 #product div
     display: flex
+    align-items: center
     justify-content: space-between
     margin: 0 1.2rem
     cursor: pointer
@@ -19,15 +23,17 @@
         margin: 1rem
         font-family: sans-serif
         font-weight: bold
-        font-size: 2rem
+        font-size: calc(1.125vw + 18px)
 
 @media only screen and (min-device-width: 0px) and (max-device-width: 500px)
     #product
-        max-width: 82vw
+        min-height: 40vh
+        max-width: 70vw
         img
+            max-height: 28vh
             max-width: 82vw
         div
-            justify-content: start
+            justify-content: space-between
             margin: 0rem
             max-width: 82vw
             p

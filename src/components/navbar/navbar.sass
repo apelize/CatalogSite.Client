@@ -2,11 +2,20 @@
     color: #686666
 
 #nav
-    height: 8vh
+    max-width: 99.5%
+    min-height: 7vh
     display: flex
     justify-content: space-between
     align-items: center
-    background-color: #332d2d
+    background-color: #332d2d   
+    p
+        cursor: default
+        margin-left: 2rem
+        left: 5vw
+        color: white
+        font-family: sans-serif
+        font-weight: bold
+        font-size: calc(1.125vw + 10px)
 #img
     height: 1.4rem
     width: 1.8rem
@@ -40,7 +49,7 @@ nav ul li
     list-style: none
 
 nav ul li a
-    font-size: 1.5rem
+    font-size: calc(1.125vw + 16px)
     font-weight: bold
     font-family: sans-serif
     text-decoration: none
@@ -54,28 +63,48 @@ nav ul li a
 @media only screen and (min-device-width: 0px) and (max-device-width: 500px)
     #cart
         display: none
-    #menu
-        display: flex
-        position: absolute
-        top: 0.75rem
-        right: 1rem
-        span
-            height: 2rem
-            width: 2rem
-            background-color: #332d2d
-            border: 0.3rem solid white
-            border-radius: 2rem
     #nav
-        max-width: 100px
+        width: 103vw
+        max-height: calc(1.25vh + 55px)
         flex-direction: column
-        align-items: start
-        ul
-            flex-direction: column
+        align-items: flex-start
+        padding-bottom: 1.5vh
+        #menu
+            height: 10vh
             width: 100%
-            margin-bottom: 0.25rem
-            li
+            display: flex
+            justify-content: space-between
+            position: relative
+            p
+            span
+                margin-top: 2vh
+                margin-right: 5vw
+                cursor: pointer
+                height: 2rem
+                width: 2rem
                 background-color: #332d2d
+                border: 0.3rem solid white
+                border-radius: 2rem
+        .menu-open
+            padding: 0rem
+            margin: 0rem
+            display: flex
+            flex-direction: column
+            width: 100vw
+            margin-bottom: 0.15rem
+            li
+                margin: 0.01rem
                 width: 100%
-                text-align: center
+                a
+                    position: relative
+                    text-align: center
+                    margin: 0vw
+                    width: 100%
+                    background-color: #332d2d
+                    color: white
+                    width: 100%
+
+        .menu-closed
+            display: none
         
     
