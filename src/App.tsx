@@ -10,13 +10,17 @@ import Shipping from "./components/shipping/shipping";
 import Contacts from "./components/contacts/contacts";
 import Feedback from "./components/feedback/feedback";
 import Cart from "./components/cart/cart";
+import DescriptionContentProvider from "./ContextProviders/productDescriptionContextProvider";
+import Description from "./components/description/description";
 
 function App() {
 
   return (
     <div id="App">
       <CartContextProvider>
+      <DescriptionContentProvider>
       <Cart/>
+      <Description/>
         <Navbar/>
         <CatalogContextProvider>
           <Routes>
@@ -27,6 +31,7 @@ function App() {
             <Route path="/feedback" element= {<Feedback/>}/>
           </Routes>      
         </CatalogContextProvider>
+        </DescriptionContentProvider>
       </CartContextProvider>
       <Footer/>
     </div>

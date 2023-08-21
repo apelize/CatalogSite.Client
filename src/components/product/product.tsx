@@ -1,28 +1,25 @@
 import { FC, useContext } from 'react'
 import { CartContext } from '../../ContextProviders/cartContextProvider';
 import { CatalogContext } from '../../ContextProviders/catalogContextProvider';
+import { DescriptionContext } from '../../ContextProviders/productDescriptionContextProvider';
+import { Product } from '../../Entities/product';
 import './product.sass'
 
 interface ProductProps{
-    id: string,
-    productName: string,
-    productDescription: string,
-    productPrice: number,
-    productImage: string
+    product: Product,
 }
 
-const ProductItem : FC<ProductProps> = ({id, productName, productDescription, productPrice, productImage}) => {
+const ProductItem : FC<ProductProps> = ({product}) => {
 
-    let {products} = useContext(CatalogContext);
-
+    let {setActive, setProduct} = useContext(DescriptionContext)
     let {AddProductToCart} = useContext(CartContext);
 
   return (
     <div id="product">
-        <img src={productImage} alt={productImage}/>
-        <div onClick={() => {products.forEach(prod => {if (prod.productId === id) {AddProductToCart(prod);}})}}>
-            <p>{productName}</p>
-            <p>{productPrice}р</p>
+        <img onClick={() => {setProduct(product); setActive(true)}} src={product.productImage} alt={product.productImage}/>
+        <div onClick={() => {AddProductToCart(product);}}>
+            <p>Купить</p>
+            <p>{product.productPrice}р</p>
         </div>
     </div>
   )

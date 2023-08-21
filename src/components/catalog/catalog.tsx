@@ -7,7 +7,7 @@ import './catalog.sass'
 const Catalog = () => {
 
   let mapProducts = (products: Product[]) => products?.map(product => { 
-    return <ProductItem key={product.productId} id={product.productId} productDescription={product.productDescription} productImage={product.productImage} productName={product.productName} productPrice={product.productPrice}/>
+    return <ProductItem key={product.productId} product={product}/>
   });
 
   let {products} = useContext(CatalogContext);
