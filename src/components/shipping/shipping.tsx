@@ -3,7 +3,12 @@ import './shipping.sass'
 
 const Shipping = () => {
   return (
-    <div id="shipping">Shipping</div>
+    <div id="shipping">
+      <ul>
+        <li>Доставка осуществляется транспортной компанией или Белпочтой.</li>
+        <li>Чеки об оплате прилагаются.</li>
+      </ul>
+    </div>
   )
 }
 

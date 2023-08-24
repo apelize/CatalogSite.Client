@@ -5,6 +5,7 @@
     justify-items: center
     margin: 3rem
     img
+        border: 3px solid #332d2d
         cursor: pointer
         height: 25rem
         border-radius: 2rem
@@ -20,6 +21,8 @@
     height: 4rem
     color: white
     border-radius: 2.5rem
+    &:active
+        background-color: #6c5f5f
     p
         margin: 1rem
         font-family: sans-serif
@@ -28,6 +31,9 @@
 
 @media only screen and (min-device-width: 0px) and (max-device-width: 500px)
     #product
+        margin-top: 0vh
+        margin-bottom: 0vh
+        padding: 1rem
         min-height: 40vh
         max-width: 70vw
         img
@@ -35,8 +41,12 @@
             max-width: 82vw
         div
             justify-content: space-between
-            margin: 0rem
+            margin: 2rem
             max-width: 82vw
             p
                 max-width: 82vw
 
+@media only screen and (orientation: landscape) and (min-device-width: 0px) and (max-device-width: 1200px)
+    #product
+        img 
+            margin-bottom: 5vh

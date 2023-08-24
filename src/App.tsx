@@ -8,12 +8,16 @@ import CartContextProvider from './ContextProviders/cartContextProvider'
 import Home from "./components/home/home";
 import Shipping from "./components/shipping/shipping";
 import Contacts from "./components/contacts/contacts";
-import Feedback from "./components/feedback/feedback";
 import Cart from "./components/cart/cart";
 import DescriptionContentProvider from "./ContextProviders/productDescriptionContextProvider";
 import Description from "./components/description/description";
+import { useEffect } from "react";
 
 function App() {
+
+  useEffect(() =>{
+    document.title="Torch.by"
+  })
 
   return (
     <div id="App">
@@ -28,7 +32,6 @@ function App() {
             <Route path="/catalog" element= {<Catalog/>}/>
             <Route path="/shipping" element= {<Shipping/>}/>
             <Route path="/contacts" element= {<Contacts/>}/>
-            <Route path="/feedback" element= {<Feedback/>}/>
           </Routes>      
         </CatalogContextProvider>
         </DescriptionContentProvider>

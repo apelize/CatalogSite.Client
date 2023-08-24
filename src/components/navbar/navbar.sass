@@ -8,6 +8,9 @@
     justify-content: space-between
     align-items: center
     background-color: #332d2d   
+    .nav-wrapper
+        display: flex
+        align-items: center
     p
         cursor: default
         margin-left: 2rem
@@ -21,6 +24,7 @@
     width: 1.8rem
    
 #cart
+    height: 50%
     display: flex
     cursor: pointer
     color: #f3f1e9
@@ -53,7 +57,7 @@ nav ul li
 nav ul li a
     font-size: calc(1.125vw + 16px)
     font-weight: bold
-    font-family: sans-serif
+    font-family: Futura,Trebuchet MS,Arial,sans-serif
     text-decoration: none
     color: #f3f1e9
     display: block
@@ -95,7 +99,7 @@ nav ul li a
             width: 100vw
             margin-bottom: 0.15rem
             li
-                height: 4.5vh
+                height: 4vh
                 margin: 0.01rem
                 width: 100%
                 a
@@ -126,3 +130,11 @@ nav ul li a
         .menu-closed
             display: none
         
+@media only screen and (orientation: landscape) and (min-device-width: 0px) and (max-device-width: 1200px)
+    #nav
+        min-height: 4rem
+        #menu
+        .menu-open
+            margin-top: 1rem
+            li
+                height: 10vh

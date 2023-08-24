@@ -4,12 +4,14 @@
     align-items: center
     justify-content: space-between
     button
+        display: flex
+        align-items: center
         cursor: pointer
         height: 4vh
         aspect-ratio: 1/1
         text-align: center
+        justify-content: center
         font-size: 2rem
-        border: 0px solid white
         background-color: white
         border-radius: 2rem
         transition-duration: .3s
@@ -20,16 +22,16 @@
         height: 8rem
     .product-desc
         display: grid
-    .product-count
-        position: relative
-        bottom: 4rem
-        left: 1rem
-        display: flex
-        height: 2vh
-        p
-            margin: 1rem
+        .product-count
             position: relative
-            bottom: 15px
+            bottom: 4rem
+            left: 1rem
+            display: flex
+            height: 2vh
+            p
+                margin: 1rem
+                position: relative
+                bottom: 15px
     
 @media only screen and (min-device-width: 0px) and (max-device-width: 1000px)
     .cart-product-wrapper
@@ -45,24 +47,26 @@
             aspect-ratio: 1/1
             text-align: center
             font-size: 2rem
-            border: 0px solid white
+            padding: 1rem
+            border: 2px solid black
             background-color: white
             border-radius: 2rem
             transition-duration: .3s
             &:hover
                 background-color: #d2caca
         img
-            margin: 0 2rem
+            margin-left: 2rem
             height: 5rem
         .product-desc
             display: grid
-        .product-count
-            position: relative
-            bottom: 4rem
-            left: 1rem
-            display: flex
-            height: 2vh
-            p
-                margin: 1rem
+            .product-name
+                font-size: 1000px
+            .product-count
                 position: relative
-                bottom: 15px
+                bottom: 4rem
+                left: 1rem
+                display: flex
+                height: 2vh
+                p
+                    margin: 1rem
+                    position: relative
