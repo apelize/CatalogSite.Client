@@ -18,8 +18,9 @@ const ProductItem : FC<ProductProps> = ({product}) => {
     <div id="product">
         <img onClick={() => {setProduct(product); setActive(true)}} src={product.productImage} alt={product.productImage}/>
         <div onClick={() => {AddProductToCart(product);}}>
-            <p>Купить</p>
-            <p>{product.productPrice}р</p>
+            <p>{product.productName}</p>
+            <p className='product-price'>{product.productPrice}р</p>
+            <p className='hover-text'>Купить</p>
         </div>
     </div>
   )

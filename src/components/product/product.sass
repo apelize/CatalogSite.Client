@@ -1,50 +1,76 @@
+.hover-text
+    display: none
+
 #product
-    min-height: 55vh
+    box-shadow: 0.3rem 0.3rem 0.3rem 0.3rem rgba(0,0,0,0.4)
+    min-height: 40vh
     display: grid
-    justify-content: center
     justify-items: center
     margin: 3rem
     img
-        border: 3px solid #332d2d
+        width: 100%
+        border-top: 2px solid #332d2d
+        border-right: 2px solid #332d2d
+        border-left: 2px solid #332d2d
         cursor: pointer
-        height: 25rem
-        border-radius: 2rem
+        height: 100%
         
 #product div
     display: flex
-    align-items: center
+    flex-direction: column
+    text-align: start
     justify-content: space-between
-    margin: 0 1.2rem
     cursor: pointer
-    width: 90%
-    background-color: #332d2d
-    height: 4rem
-    color: white
-    border-radius: 2.5rem
+    width: 100%
+    background-color: white
+    height: 100%
+    color: black
+    border: 2px solid #332d2d
+    transition: .3s
     &:active
-        background-color: #6c5f5f
+        background-color: #b3aaaa
+    &:hover
+        background-color: #e7e3e3
+        .product-price 
+            display: none
+        .hover-text
+            display: flex
+            font-size: calc(1.125vw + 10px)
+            font-weight: 100
     p
         margin: 1rem
         font-family: sans-serif
         font-weight: bold
         font-size: calc(1.125vw + 18px)
+    .product-price
+        font-size: calc(1.125vw + 10px)
+        font-weight: 100
 
 @media only screen and (min-device-width: 0px) and (max-device-width: 500px)
     #product
-        margin-top: 0vh
-        margin-bottom: 0vh
-        padding: 1rem
-        min-height: 40vh
-        max-width: 70vw
-        img
-            max-height: 28vh
-            max-width: 82vw
+        width: 90%
         div
-            justify-content: space-between
-            margin: 2rem
-            max-width: 82vw
-            p
-                max-width: 82vw
+            .product-price 
+                font-size: calc(1.125vw + 16px)
+            &:hover
+                .product-price
+                    display: flex
+                .hover-text
+                    display: none
+//         margin-top: 0vh
+//         margin-bottom: 0vh
+//         padding: 1rem
+//         min-height: 40vh
+//         max-width: 70vw
+//         img
+//             max-height: 28vh
+//             max-width: 82vw
+//         div
+//             justify-content: space-between
+//             margin: 2rem
+//             max-width: 82vw
+//             p
+//                 max-width: 82vw
 
 @media only screen and (orientation: landscape) and (min-device-width: 0px) and (max-device-width: 1200px)
     #product

@@ -1,4 +1,3 @@
-import React from 'react'
 import { NavLink } from 'react-router-dom'
 import './footer.sass'
 import whatsapp from '../../assets/whatsapp.png'

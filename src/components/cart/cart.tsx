@@ -1,6 +1,7 @@
 
 import { useContext, useReducer, useState } from 'react'
 import { CartContext } from '../../ContextProviders/cartContextProvider'
+import { SendNotification } from '../../scripts/SendOrderNotification'
 import CartItem from '../cartitem/cartitem'
 import './cart.sass'
 
@@ -8,7 +9,7 @@ import './cart.sass'
 const Cart = () => {
     let {cartProducts, active, setActive} = useContext(CartContext)
     const [phoneNumber, setPhoneNumber] = useState<string>();
-    const [_, forceUpdate] = useReducer(x => x + 1, 0);
+    const [, forceUpdate] = useReducer(x => x + 1, 0);
     let handleDeleteItem = () =>{
       forceUpdate();
     }
@@ -19,14 +20,6 @@ const Cart = () => {
         key => {
           return <CartItem CartProduct={cartProducts[key]} ProductImage={cartProducts[key].ProductImage} UpdateCart={handleDeleteItem}/>
         })
-    }
-
-    let SendNotification = () =>{
-      let keys = Object.keys(cartProducts)
-      let ProductList: string[] = []
-      keys.forEach(key => ProductList.push(cartProducts[key].ProductName + "\tx" + cartProducts[key].Count))
-      let request = {phoneNumber: phoneNumber, productList: ProductList}
-      fetch("https://torchby.fly.dev/order", {method: 'POST', headers:{ "Content-Type": "application/json" }, body: JSON.stringify(request)})
     }
 
   return (
@@ -45,7 +38,7 @@ const Cart = () => {
               <p>Ваш Номер</p>
                 <input placeholder='Номер телефона' className='phone-checkout' type="text" value={phoneNumber} onChange={(e) => {setPhoneNumber(e.target.value)}}/>
                 <div className='empty'></div>
-                <button className='checkout-button' onClick={() => {SendNotification(); setActive(false)}}>Оформить заказ</button>
+                <button className='checkout-button' onClick={() => {SendNotification(cartProducts, phoneNumber!); setActive(false)}}>Оформить заказ</button>
             </div>
         </div>
     </div>

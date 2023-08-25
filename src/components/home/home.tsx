@@ -3,7 +3,9 @@ import './home.sass'
 
 const Home = () => {
   return (
-    <div id="home">Home</div>
+    <div id="home">
+      Promo
+    </div>
   )
 }
 
