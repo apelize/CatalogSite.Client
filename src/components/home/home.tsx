@@ -4,7 +4,10 @@ import './home.sass'
 const Home = () => {
   return (
     <div id="home">
-      Promo
+      <div className='promo'>
+        <p>Факелы</p>
+        <p>Доставка по всей Беларуси</p>
+      </div> 
     </div>
   )
 }

@@ -16,7 +16,7 @@ import { useEffect } from "react";
 function App() {
 
   useEffect(() =>{
-    document.title="Torch.by"
+    document.title="Fakel.by"
   })
 
   return (
