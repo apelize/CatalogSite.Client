@@ -12,6 +12,8 @@ import Cart from "./components/cart/cart";
 import DescriptionContentProvider from "./ContextProviders/productDescriptionContextProvider";
 import Description from "./components/description/description";
 import { useEffect } from "react";
+import AdminPanel from "./components/adminpanel/adminpanel";
+import AdminProductContextProvider from "./ContextProviders/adminProductContextProvider";
 
 function App() {
 
@@ -26,14 +28,17 @@ function App() {
       <Cart/>
       <Description/>
         <Navbar/>
-        <CatalogContextProvider>
+        <AdminProductContextProvider>
+          <CatalogContextProvider>
           <Routes>
             <Route path="/" element={<Home/>}/>
             <Route path="/catalog" element= {<Catalog/>}/>
             <Route path="/shipping" element= {<Shipping/>}/>
             <Route path="/contacts" element= {<Contacts/>}/>
+            <Route path="/admin" element={<AdminPanel/>}/>
           </Routes>      
-        </CatalogContextProvider>
+          </CatalogContextProvider>
+        </AdminProductContextProvider>
         </DescriptionContentProvider>
       </CartContextProvider>
       <Footer/>

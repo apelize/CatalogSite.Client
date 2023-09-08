@@ -6,5 +6,5 @@ export const SendNotification = (cartProducts : Record<string, CartProduct>, pho
     let ProductList: string[] = []
     keys.forEach(key => ProductList.push(cartProducts[key].ProductName + "\tx" + cartProducts[key].Count))
     let request = {phoneNumber: phoneNumber, productList: ProductList}
-    fetch("http://localhost:5056/order", {method: 'POST', headers:{ "Content-Type": "application/json" }, body: JSON.stringify(request)})
+    fetch(process.env.REACT_APP_SEND_ORDER_URL!, {method: 'POST', headers:{ "Content-Type": "application/json" }, body: JSON.stringify(request)})
 }
